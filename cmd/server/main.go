@@ -15,7 +15,7 @@ func main() {
 	fmt.Println("Listening on port :4000")
 
 	mux.NotFoundHandler = handlers.NotFound // 404 handler
-	mux.HandleFunc("/profile", handlers.UserProfileHandler)
+	mux.HandleFunc("/profile", handlers.ProfileHandler)
 	mux.HandleFunc("/wall", handlers.WallHandler)
 	mux.HandleFunc("/friends", handlers.FriendsHandler)
 

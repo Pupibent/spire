@@ -1,7 +1,6 @@
 package handlers
 
 import (
-	"fmt"
 	"net/http"
 	models "spire/pkg/models"
 	"spire/pkg/views"
@@ -16,14 +15,15 @@ var FriendsView *views.View
 var NotFound http.Handler = http.HandlerFunc(PageNotFoundHandler)
 
 func PageNotFoundHandler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "<title>%d</title>", http.StatusNotFound)
-	fmt.Fprintf(w, "<b>%d Page Not Found</b>", http.StatusNotFound)
+	// fmt.Fprintf(w, "<title>%d</title>", http.StatusNotFound)
+	// fmt.Fprintf(w, "<b>%d Page Not Found</b>", http.StatusNotFound)
+	http.Redirect(w, r, "/profile", http.StatusSeeOther)
 }
 
-func UserProfileHandler(w http.ResponseWriter, r *http.Request) {
+func ProfileHandler(w http.ResponseWriter, r *http.Request) {
 	// w.Header().Set("X-Content-Type-Options", "nosniff")
-	ProfileView = views.NewView("E://spire/web/templates/userprofile.html")
-	err := ProfileView.Template.ExecuteTemplate(w, "userprofile", models.Admin)
+	ProfileView = views.NewView("bootstrap", "E://spire/web/templates/userprofile.html")
+	err := ProfileView.Template.ExecuteTemplate(w, ProfileView.Layout, models.Admin)
 	if err != nil {
 		panic(err)
 	}
@@ -31,16 +31,16 @@ func UserProfileHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func WallHandler(w http.ResponseWriter, r *http.Request) {
-	WallView = views.NewView("E://spire/web/templates/wall.html")
-	err := WallView.Template.ExecuteTemplate(w, "wall", nil)
+	WallView = views.NewView("bootstrap", "E://spire/web/templates/wall.html")
+	err := WallView.Template.ExecuteTemplate(w, WallView.Layout, nil)
 	if err != nil {
 		panic(err)
 	}
 }
 
 func FriendsHandler(w http.ResponseWriter, r *http.Request) {
-	FriendsView = views.NewView("E://spire/web/templates/friends.html")
-	err := FriendsView.Template.ExecuteTemplate(w, "friends", nil)
+	FriendsView = views.NewView("bootstrap", "E://spire/web/templates/friends.html")
+	err := FriendsView.Template.ExecuteTemplate(w, FriendsView.Layout, nil)
 	if err != nil {
 		panic(err)
 	}

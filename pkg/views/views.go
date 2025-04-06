@@ -6,15 +6,20 @@ import (
 
 type View struct {
 	Template *template.Template
+	Layout   string
 }
 
-func NewView(files ...string) *View {
-	files = append(files, "E:/spire/web/templates/layouts/footer.html")
+func NewView(layout string, files ...string) *View {
+	files = append(files,
+		"E://spire/web/templates/layouts/footer.html",
+		"E://spire/web/templates/layouts/bootstrap.html",
+		"E://spire/web/templates/layouts/navbar.html")
 	t, err := template.ParseFiles(files...)
 	if err != nil {
 		panic(err)
 	}
 	return &View{
 		Template: t,
+		Layout:   layout,
 	}
 }
