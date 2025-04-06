@@ -1,0 +1,79 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    background-color: #f4f4f9;
+}
+.profile-container {
+    background-color: #8cdbb6;
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 0 10px rgba(89, 73, 73, 0.1);
+    text-align: center;
+    width: 400px;
+    margin-right: 30px;
+    margin-top: 30px;
+}
+.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+.username {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.status {
+    font-size: 16px;
+    color: #777;
+    margin-bottom: 20px;
+}
+.email {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+}
+.edit-profile {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: #403a3a;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.posts {
+    text-align: left;
+    margin-bottom: 20px;
+}
+.post {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.post-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.friends-container {
+    background-color: #fff;
+    padding: 50px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    text-align: left;
+    margin-top: 30px;
+}
+.friend {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}

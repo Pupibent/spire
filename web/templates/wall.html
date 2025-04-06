@@ -1,0 +1,99 @@
+{{ define "wall" }}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Стена пользователя</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+            color: #333;
+        }
+        .post {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        .post-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .post-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .post-author {
+            font-weight: bold;
+            color: #333;
+        }
+        .post-content {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+        .post-footer {
+            font-size: 14px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Стена пользователя</h1>
+        </div>
+        <div class="post">
+            <div class="post-header">
+                <img src="https://via.placeholder.com/40" alt="Аватар автора" class="post-avatar">
+                <span class="post-author">Имя автора</span>
+            </div>
+            <div class="post-content">
+                Это пример поста на стене пользователя. Здесь может быть текст, изображения и другие элементы.
+            </div>
+            <div class="post-footer">
+                10 минут назад
+            </div>
+        </div>
+        <div class="post">
+            <div class="post-header">
+                <img src="https://via.placeholder.com/40" alt="Аватар автора" class="post-avatar">
+                <span class="post-author">Имя автора</span>
+            </div>
+            <div class="post-content">
+                Еще один пример поста на стене пользователя. Здесь может быть текст, изображения и другие элементы.
+            </div>
+            <div class="post-footer">
+                30 минут назад
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+{{ end }}
