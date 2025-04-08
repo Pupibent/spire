@@ -2,6 +2,8 @@ package views
 
 import (
 	"html/template"
+	"net/http"
+	"path/filepath"
 )
 
 type View struct {
@@ -9,11 +11,12 @@ type View struct {
 	Layout   string
 }
 
-func NewView(layout string, files ...string) *View {
-	files = append(files,
-		"E://spire/web/templates/layouts/footer.html",
-		"E://spire/web/templates/layouts/bootstrap.html",
-		"E://spire/web/templates/layouts/navbar.html")
+func NewView(layout string, current string) *View {
+	files, err := filepath.Glob("E://spire/web/templates/layouts/*.html")
+	if err != nil {
+		panic(err)
+	}
+	files = append(files, current)
 	t, err := template.ParseFiles(files...)
 	if err != nil {
 		panic(err)
@@ -22,4 +25,8 @@ func NewView(layout string, files ...string) *View {
 		Template: t,
 		Layout:   layout,
 	}
+}
+
+func (v *View) Render(w http.ResponseWriter, data interface{}) error {
+	return v.Template.ExecuteTemplate(w, v.Layout, data)
 }

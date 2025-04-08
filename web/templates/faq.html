@@ -1,0 +1,101 @@
+{{define "yield"}}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Мой Сайт</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 20px;
+        }
+
+        .faq-item {
+            margin-bottom: 15px;
+        }
+
+        .question {
+            font-weight: bold;
+            color: #333;
+            padding: 10px 0;
+            border-bottom: 2px solid #eee;
+        }
+
+        .answer {
+            color: #666;
+            padding: 10px 0;
+            line-height: 1.5;
+        }
+
+        .divider {
+            height: 1px;
+            background-color: #eee;
+            margin: 15px 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="faq-container">
+        <h1>Часто задаваемые вопросы</h1>
+
+        <div class="faq-item">
+            <div class="question">Вопрос 1: Как начать использовать ваш сайт?</div>
+            <div class="answer">Ответ: Для начала работы с сайтом необходимо зарегистрироваться или авторизоваться через форму входа.</div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="faq-item">
+            <div class="question">Вопрос 2: Как восстановить пароль?</div>
+            <div class="answer">Ответ: Для восстановления пароля перейдите по ссылке "Забыли пароль?", введите свою электронную почту и следуйте инструкциям.</div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="faq-item">
+            <div class="question">Вопрос 3: Как изменить личные данные?</div>
+            <div class="answer">Ответ: Для изменения личных данных зайдите в свой профиль и отредактируйте необходимые поля в разделе "Настройки профиля".</div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="faq-item">
+            <div class="question">Вопрос 4: Как связаться с поддержкой?</div>
+            <div class="answer">Ответ: Вы можете связаться с нашей поддержкой через форму обратной связи или написать на email: support@example.com</div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="faq-item">
+            <div class="question">Вопрос 5: Как отменить подписку?</div>
+            <div class="answer">Ответ: Для отмены подписки зайдите в раздел "Моя подписка" и нажмите кнопку "Отменить".</div>
+        </div>
+    </div>
+</body>
+</html>
+
+{{ end }}

@@ -6,24 +6,24 @@ import (
 	"spire/pkg/views"
 )
 
-// views variables are here.. for now
-
-var ProfileView *views.View
-var WallView *views.View
-var FriendsView *views.View
+const (
+	bs          string = "bootstrap"
+	profilePath string = "E://spire/web/templates/userprofile.html"
+	wallPath    string = "E://spire/web/templates/wall.html"
+	friendsPath string = "E:/spire/web/templates/friends.html"
+	FAQPath     string = "E:/spire/web/templates/faq.html"
+)
 
 var NotFound http.Handler = http.HandlerFunc(PageNotFoundHandler)
 
 func PageNotFoundHandler(w http.ResponseWriter, r *http.Request) {
-	// fmt.Fprintf(w, "<title>%d</title>", http.StatusNotFound)
-	// fmt.Fprintf(w, "<b>%d Page Not Found</b>", http.StatusNotFound)
 	http.Redirect(w, r, "/profile", http.StatusSeeOther)
 }
 
 func ProfileHandler(w http.ResponseWriter, r *http.Request) {
 	// w.Header().Set("X-Content-Type-Options", "nosniff")
-	ProfileView = views.NewView("bootstrap", "E://spire/web/templates/userprofile.html")
-	err := ProfileView.Template.ExecuteTemplate(w, ProfileView.Layout, models.Admin)
+	ProfileView := views.NewView(bs, profilePath)
+	err := ProfileView.Render(w, models.Admin)
 	if err != nil {
 		panic(err)
 	}
@@ -31,17 +31,27 @@ func ProfileHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func WallHandler(w http.ResponseWriter, r *http.Request) {
-	WallView = views.NewView("bootstrap", "E://spire/web/templates/wall.html")
-	err := WallView.Template.ExecuteTemplate(w, WallView.Layout, nil)
+	WallView := views.NewView(bs, wallPath)
+	err := WallView.Render(w, nil)
 	if err != nil {
 		panic(err)
 	}
 }
 
 func FriendsHandler(w http.ResponseWriter, r *http.Request) {
-	FriendsView = views.NewView("bootstrap", "E://spire/web/templates/friends.html")
-	err := FriendsView.Template.ExecuteTemplate(w, FriendsView.Layout, nil)
+	FriendsView := views.NewView(bs, friendsPath)
+	err := FriendsView.Render(w, nil)
 	if err != nil {
 		panic(err)
 	}
 }
+
+func FAQHandler(w http.ResponseWriter, r *http.Request) {
+	FAQView := views.NewView(bs, FAQPath)
+	err := FAQView.Render(w, nil)
+	if err != nil {
+		panic(err)
+	}
+}
+
+// TODO: FAQ handler

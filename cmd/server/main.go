@@ -18,8 +18,11 @@ func main() {
 	mux.HandleFunc("/profile", handlers.ProfileHandler)
 	mux.HandleFunc("/wall", handlers.WallHandler)
 	mux.HandleFunc("/friends", handlers.FriendsHandler)
+	mux.HandleFunc("/faq", handlers.FAQHandler)
 
 	err := http.ListenAndServe(":4000", mux)
 	log.Fatal(err)
 
 }
+
+// TODO: FAQ handler
