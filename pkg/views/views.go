@@ -17,6 +17,7 @@ func NewView(layout string, current string) *View {
 		panic(err)
 	}
 	files = append(files, current)
+
 	t, err := template.ParseFiles(files...)
 	if err != nil {
 		panic(err)
